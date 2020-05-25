@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorToolbarBackground">#4E33FB</color>
+
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#ffffff</color>
+    <color name="textColor">#101010</color>
+
+    <color name="colorPrimary">#614AFB</color>
+    <color name="colorPrimaryDark">#614AFB</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorRed">#A11D1D</color>
+    <color name="colorBlack">#1C1C1C</color>
+
+    <color name="colorLightPurple">#614AFB</color>
+
+    <color name="colorCustomLoginButton">#102B81</color>
+
+    <color name="colorLightBlue">#169DF6</color>
+
+</resources>

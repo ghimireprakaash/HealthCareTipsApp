@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.healthcareandnutritionapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".NutritionTipsForGainingWeight"></activity>
+        <activity android:name=".NutritionForHealthySkin" />
+        <activity android:name=".NutritionForHealthyHair" />
+        <activity android:name=".NutritionForWomen" />
+        <activity android:name=".NutritionForMen" />
+        <activity android:name=".NutritionForChildren" />
+        <activity android:name=".GeneralNutritionTips" />
+        <activity android:name=".InsertDataForSeasonalHealthTips" />
+        <activity android:name=".InsertDataForRelievingStress" />
+        <activity android:name=".InsertDataForHeartTips" />
+        <activity android:name=".NeededHealthTipsDATAINSERTField" />
+        <activity android:name=".SplashScreenAndProgressBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".HealthTips" />
+        <activity android:name=".NeededHealthTips" />
+        <activity android:name=".HealthyHeartTips" />
+        <activity android:name=".RelieveStressTips" />
+        <activity android:name=".SeasonalTips" />
+        <activity android:name=".NutritionTips" />
+        <activity android:name=".HealthyFoodRecipes" />
+    </application>
+
+</manifest>

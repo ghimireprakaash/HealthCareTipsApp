@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NutritionForWomen">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nutritionTips_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbarBackground">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nutrition Tips For Women"
+            android:textSize="23sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/nutritionTipsWomen_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_sign"
+            android:background="@color/colorLightBlue"
+            app:rippleColor="@color/colorBlack"
+            app:fabSize="normal"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="30dp"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

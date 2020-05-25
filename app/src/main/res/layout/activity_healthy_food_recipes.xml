@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HealthyFoodRecipes">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbarBackground"
+        app:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Healthy Food Recipes"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipes1"
+        android:textColor="#6450F0"
+        android:textSize="20sp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipes2"
+        android:textColor="#6450F0"
+        android:textSize="20sp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipes3"
+        android:textColor="#6450F0"
+        android:textSize="20sp"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipes4"
+        android:textColor="#6450F0"
+        android:textSize="20sp"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="250dp"/>
+</RelativeLayout>

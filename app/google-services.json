@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1052211021599",
+    "firebase_url": "https://health-care-firebase-13fd3.firebaseio.com",
+    "project_id": "health-care-firebase-13fd3",
+    "storage_bucket": "health-care-firebase-13fd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052211021599:android:8be96efd7527c5dddb522a",
+        "android_client_info": {
+          "package_name": "com.example.healthcareandnutritionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052211021599-dcarivk9qp3i1pd8p6mkmqmte9r5fiov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnsLv_EhQAHDA71hwsTBkQKlQVEKVXCAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052211021599-dcarivk9qp3i1pd8p6mkmqmte9r5fiov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

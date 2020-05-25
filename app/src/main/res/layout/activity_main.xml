@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbarBackground"
+        app:theme="@style/ToolbarTheme">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ViewFlipper
+        android:id="@+id/view_Flipper"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_below="@+id/toolbar"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_Flipper"
+        android:background="@color/colorBlack">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            android:paddingTop="15dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/health_tips"
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:text="Health Tips"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/custom_text_field"/>
+
+            <TextView
+                android:id="@+id/nutrition_tips"
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:text="Nutrition Tips"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:paddingStart="65dp"
+                android:paddingEnd="45dp"
+                android:background="@drawable/custom_text_field"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/healthy_foods"
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:text="HealthyFoods Recipes"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:paddingStart="60dp"
+                android:paddingEnd="38dp"
+                android:background="@drawable/custom_text_field"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="@color/colorWhite">-->
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="356dp"-->
+<!--            android:background="@color/colorWhite"-->
+<!--            android:padding="10dp">-->
+
+<!--            -->
+<!--        </ScrollView>-->
+<!--    </LinearLayout>-->
+
+</RelativeLayout>
