@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorToolbarBackground">#482CFB</color>
+
+        <!--main layout color-->
+    <color name="colorPrimary">#5136FA</color>
+    <color name="colorPrimaryDark">#5A40FF</color>
+    <color name="colorAccent">#03DAC5</color>
+        <!--End-->
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorRed">#A11D1D</color>
+    <color name="colorBlack">#1C1C1C</color>
+
+    <color name="colorLightPurple">#6C55FF</color>
+
+</resources>

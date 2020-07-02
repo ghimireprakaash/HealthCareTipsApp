@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NutritionTips">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nutritionTips_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbarBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/whiteleftarrow"/>
+
+                <Button
+                    android:id="@+id/buttonBackNutritionTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"/>
+
+            </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nutrition_tips_toolbar"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="20dp"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nutritionTips_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+            <TextView
+                android:id="@+id/generalNutritionTips"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/general_nutrition_tips"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/nutritionTips_Children"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_needed_for_children"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/nutritionTips_Men"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_needed_for_men"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/nutritionTips_Women"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_needed_for_women"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/nutritionTips_Hair"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_for_healthy_hair"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/nutritionTips_Skin"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_for_healthy_skin"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/weightGainTips"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:text="@string/nutrition_tips_weight_gain"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/custom_text_view"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

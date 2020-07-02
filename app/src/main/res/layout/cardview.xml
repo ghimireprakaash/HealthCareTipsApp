@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_card_text_view">
+
+    <!--This below text view is defined to show the data of Health Tips-->
+
+            <TextView
+                android:id="@+id/healthTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="5dp"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/heartTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/stressRelieveTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/seasonalTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+    <!--End for Health Tips-->
+
+    <!--This below text view is defined to show the data of Nutrition Tips-->
+
+            <TextView
+                android:id="@+id/generalNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/childNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/menNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/womenNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/healthyHairNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/healthySkinNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/weightGainNutritionTips_DataDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:padding="10dp"/>
+
+    <!--End for Nutrition Tips-->
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

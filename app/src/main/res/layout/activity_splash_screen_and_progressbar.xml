@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center_vertical"
+    tools:context=".SplashScreenAndProgressbar">
+
+
+    <ImageView
+        android:id="@+id/imageView_SPLASH_SCREEN_Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/splash_image"/>
+
+    <TextView
+        android:id="@+id/SPLASH_SCREEN_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/healthCare_app"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/imageView_SPLASH_SCREEN_Logo"
+        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SPLASH_SCREEN_TextView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyle"
+        android:indeterminateDrawable="@drawable/cpb"
+        android:indeterminateDuration="@android:integer/config_longAnimTime"
+        android:visibility="invisible"/>
+
+</RelativeLayout>
