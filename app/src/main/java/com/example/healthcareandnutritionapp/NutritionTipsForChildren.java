@@ -58,7 +58,7 @@ public class NutritionTipsForChildren extends AppCompatActivity {
                 childrenNutritionTips_ProgressBar.setVisibility(View.GONE);
                 childrenNutritionRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
     }
 
     @Override

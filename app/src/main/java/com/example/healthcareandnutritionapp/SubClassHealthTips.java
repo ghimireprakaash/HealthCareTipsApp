@@ -62,7 +62,7 @@ public class SubClassHealthTips extends AppCompatActivity {
                 healthTips_ProgressBar.setVisibility(View.GONE);
                 healthTipsRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
 
     }
 

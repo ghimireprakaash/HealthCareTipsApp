@@ -57,7 +57,7 @@ public class SeasonalTips extends AppCompatActivity {
                 seasonalTips_ProgressBar.setVisibility(View.GONE);
                 seasonalTipsRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
 
     }
 

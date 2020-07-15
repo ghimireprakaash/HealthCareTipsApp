@@ -55,7 +55,7 @@ public class HealthyHeart extends AppCompatActivity {
                 healthyHeartTips_ProgressBar.setVisibility(View.GONE);
                 heartTipsRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
     }
 
     @Override

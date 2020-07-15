@@ -59,7 +59,7 @@ public class NutritionTipsForMen extends AppCompatActivity {
                 menNutritionTips_ProgressBar.setVisibility(View.GONE);
                 menNutritionRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
 
     }
 

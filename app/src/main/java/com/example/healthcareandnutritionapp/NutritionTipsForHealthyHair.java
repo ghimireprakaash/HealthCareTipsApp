@@ -57,7 +57,7 @@ public class NutritionTipsForHealthyHair extends AppCompatActivity {
                 healthyHairNutritionTips_ProgressBar.setVisibility(View.GONE);
                 hairNutritionRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
     }
 
     @Override

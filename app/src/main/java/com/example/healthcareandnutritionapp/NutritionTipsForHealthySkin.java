@@ -57,7 +57,7 @@ public class NutritionTipsForHealthySkin extends AppCompatActivity {
                 healthySkinNutritionTips_ProgressBar.setVisibility(View.GONE);
                 skinNutritionRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
     }
 
     @Override

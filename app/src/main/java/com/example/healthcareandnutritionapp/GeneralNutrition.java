@@ -56,7 +56,7 @@ public class GeneralNutrition extends AppCompatActivity {
                 generalNutritionTips_ProgressBar.setVisibility(View.GONE);
                 nutritionTipsRecyclerView.setAdapter(adapterRecyclerView);
             }
-        },2000);
+        },1000);
 
     }
 
