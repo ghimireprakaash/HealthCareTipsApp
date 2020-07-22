@@ -1,17 +1,57 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ProgressBar;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RelieveStressTips extends AppCompatActivity {
+
+    RecyclerView stressRelieveRecyclerView;
+
+    // Creating object of RecyclerViewAdapter
+    AdapterRecyclerView adapterRecyclerView;
+
+
+    ProgressBar progressBar_StressRelieve;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relieve_stress_tips);
+
+        progressBar_StressRelieve = findViewById(R.id.progressBar_StressRelieveTips);
+
+        stressRelieveRecyclerView = findViewById(R.id.stressRelieveRecyclerView);
+        stressRelieveRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<Model> options =
+                new FirebaseRecyclerOptions.Builder<Model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Health Tips").child("Stress Relieve"), Model.class)
+                        .build();
+
+        adapterRecyclerView = new AdapterRecyclerView(options);
+        stressRelieveRecyclerView.setAdapter(adapterRecyclerView);
+
+
+        progressBar_StressRelieve.setVisibility(View.VISIBLE);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressBar_StressRelieve.setVisibility(View.GONE);
+                onStart();
+            }
+        }, 2500);
+
 
         FloatingActionButton relieveStress_fab = findViewById(R.id.relieveStress_fab);
 
@@ -23,5 +63,13 @@ public class RelieveStressTips extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        adapterRecyclerView.startListening();
     }
 }

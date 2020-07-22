@@ -18,7 +18,7 @@
     <ViewFlipper
         android:id="@+id/view_Flipper"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="340dp"
         android:layout_below="@+id/toolbar"/>
 
 
@@ -26,75 +26,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/view_Flipper"
-        android:background="@color/colorBlack">
+        android:background="@color/colorLightPurple">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorWhite"
-            android:paddingTop="15dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="15dp"
-            android:layout_gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="14dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
 
             <TextView
                 android:id="@+id/health_tips"
-                android:layout_width="250dp"
-                android:layout_height="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Health Tips"
-                android:textSize="18sp"
-                android:textColor="@color/colorWhite"
+                android:textSize="19sp"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/custom_text_field"
                 android:gravity="center"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:background="@drawable/custom_text_field"/>
+                android:padding="26dp"/>
 
             <TextView
                 android:id="@+id/nutrition_tips"
-                android:layout_width="250dp"
-                android:layout_height="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Nutrition Tips"
-                android:textSize="18sp"
-                android:textColor="@color/colorWhite"
-                android:gravity="center"
-                android:paddingStart="65dp"
-                android:paddingEnd="45dp"
+                android:textSize="19sp"
+                android:textColor="@color/colorBlack"
                 android:background="@drawable/custom_text_field"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:id="@+id/healthy_foods"
-                android:layout_width="250dp"
-                android:layout_height="70dp"
-                android:text="HealthyFoods Recipes"
-                android:textSize="18sp"
-                android:textColor="@color/colorWhite"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:paddingStart="60dp"
-                android:paddingEnd="38dp"
-                android:background="@drawable/custom_text_field"
-                android:layout_marginTop="10dp"/>
+                android:padding="26dp"/>
 
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/exercises_tips"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Exercises"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/colorWhite"-->
+<!--                android:background="@drawable/custom_text_field"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:gravity="center"-->
+<!--                android:padding="26dp"/>-->
+
+            </LinearLayout>
+
     </ScrollView>
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        android:background="@color/colorWhite">-->
-
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginTop="356dp"-->
-<!--            android:background="@color/colorWhite"-->
-<!--            android:padding="10dp">-->
-
-<!--            -->
-<!--        </ScrollView>-->
-<!--    </LinearLayout>-->
 
 </RelativeLayout>

@@ -2,7 +2,9 @@ package com.example.healthcareandnutritionapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +19,7 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
 //    EditText generalTipsValue1, generalTipsValue2, generalTipsValue3, generalTipsValue4, generalTipsValue5,
 //            generalTipsValue6;
 
-    EditText healthTipsValue;
+    EditText healthTipsValueInsert;
 
     long maxId = 0;
 
@@ -30,7 +32,7 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
     DatabaseReference databaseReference;
 
     //Declaring variable of the Member Class
-    HealthTips__Model healthTipsModel;
+    Model healthTipsModel;
 
     //OnCreate Method StartUp
     @Override
@@ -38,7 +40,7 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_needed_health_tips_d_a_t_a_i_n_s_e_r_t_field);
 
-        healthTipsValue = findViewById(R.id.generalTipsValue);
+        healthTipsValueInsert = findViewById(R.id.healthTipsValue);
 //        generalTipsValue1 = findViewById(R.id.generalTipsValue1);
 //        generalTipsValue2 = findViewById(R.id.generalTipsValue2);
 //        generalTipsValue3 = findViewById(R.id.generalTipsValue3);
@@ -49,11 +51,11 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
         btnINSERT = findViewById(R.id.btnInsert);
 
         //Initializing variable of the Member class i.e GeneralHealthTips
-        healthTipsModel = new HealthTips__Model();
+        healthTipsModel = new Model();
 
         //Write a message to the firebase:
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("HealthTips").child("GeneralHealthTips");
+        databaseReference = database.getReference("Health Tips").child("SubClass Health Tips");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -71,11 +73,21 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
         btnINSERT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String generalHealthTipsValue = healthTipsValue.getText().toString();
-                healthTipsModel.setGeneralHealthTipsValue(generalHealthTipsValue);
-                databaseReference.child(String.valueOf(maxId + 1)).setValue(healthTipsModel);
+                String healthTipsValue = healthTipsValueInsert.getText().toString();
 
-                Toast.makeText(NeededHealthTipsDATAINSERTField.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(healthTipsValue)){
+                    Toast.makeText(NeededHealthTipsDATAINSERTField.this, "To insert data you'll need to type some value in the field", Toast.LENGTH_LONG).show();
+
+                } else {
+                    healthTipsModel.setHealthTipsValue(healthTipsValue);
+                    databaseReference.child(String.valueOf(maxId + 1)).setValue(healthTipsModel);
+
+                    Toast.makeText(NeededHealthTipsDATAINSERTField.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                }
+
+
+//                startActivity(new Intent(NeededHealthTipsDATAINSERTField.this, NeededHealthTips.class));
+//                finish();
             }
         });
     }

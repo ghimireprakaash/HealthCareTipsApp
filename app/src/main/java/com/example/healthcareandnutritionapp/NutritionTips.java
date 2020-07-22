@@ -15,7 +15,7 @@ public class NutritionTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_tips);
 
-        general_Nutrition = findViewById(R.id.nutrition_tips);
+        general_Nutrition = findViewById(R.id.generalNutritionTips);
         nutrition_Children = findViewById(R.id.nutritionTips_Children);
         nutrition_Men = findViewById(R.id.nutritionTips_Men);
         nutrition_Women = findViewById(R.id.nutritionTips_Women);
@@ -26,9 +26,52 @@ public class NutritionTips extends AppCompatActivity {
         general_Nutrition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NutritionTips.this, GeneralNutritionTips.class));
+                startActivity(new Intent(NutritionTips.this, NeededNutritionTips.class));
             }
         });
+
+        nutrition_Children.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionTipsForChildren.class));
+            }
+        });
+
+        nutrition_Men.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionTipsForMen.class));
+            }
+        });
+
+        nutrition_Women.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionTipsForWomen.class));
+            }
+        });
+
+        nutritionTips_Hair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionTipsForHair.class));
+            }
+        });
+
+        nutritionTips_skin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionTipsForSkin.class));
+            }
+        });
+
+        weight_Gain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, NutritionForGainingWeight.class));
+            }
+        });
+
     }
 
     @Override

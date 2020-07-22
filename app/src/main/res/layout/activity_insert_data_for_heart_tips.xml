@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INSERT Data Heart Tips"
+            android:text="Insert Data For Heart Tips"
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
             android:gravity="center"/>
@@ -32,8 +32,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:autofillHints=""
-        android:inputType="text"/>
+        android:inputType="textMultiLine"/>
 
     <Button
         android:id="@+id/btnInsert"

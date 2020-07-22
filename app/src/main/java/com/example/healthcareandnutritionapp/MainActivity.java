@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView health_Tips, nutrition_Tips, healthy_foods, exercise_workouts;
+    TextView health_Tips, nutrition_Tips;
     ViewFlipper viewFlipper;
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         health_Tips = findViewById(R.id.health_tips);
         nutrition_Tips = findViewById(R.id.nutrition_tips);
-        healthy_foods = findViewById(R.id.healthy_foods);
+//        exercises_tips = findViewById(R.id.exercises_tips);
 
         //Image Slider
         int[] images = {R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four,
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, HealthTips.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -66,18 +66,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, NutritionTips.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
-        healthy_foods.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, HealthyFoodRecipes.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
+//        exercises_tips.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, Exercises.class);
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            }
+//        });
 
         //Method onCreate last step...
     }

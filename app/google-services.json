@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1052211021599-503p1n8ke6jcj65h0fplhvgkp7a42dfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthcareandnutritionapp",
+            "certificate_hash": "ddd7ba12cbb9a8d8633625707dec3502d3d2d25b"
+          }
+        },
+        {
           "client_id": "1052211021599-dcarivk9qp3i1pd8p6mkmqmte9r5fiov.apps.googleusercontent.com",
           "client_type": 3
         }

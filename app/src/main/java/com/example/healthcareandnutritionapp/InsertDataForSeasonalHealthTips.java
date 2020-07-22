@@ -3,6 +3,7 @@ package com.example.healthcareandnutritionapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,8 @@ public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
     DatabaseReference databaseReference;
 
     //Declaring variable of the Member Class
-    HealthTips__Model healthTipsModel;
+    Model seasonalHealthTipsModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,14 @@ public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
         seasonalTipsValue = findViewById(R.id.seasonalTipsValue);
         btnINSERT = findViewById(R.id.btnInsert);
 
+
         //Initializing variable of the Member class i.e GeneralHealthTips
-        healthTipsModel = new HealthTips__Model();
+        seasonalHealthTipsModel = new Model();
+
 
         //Write a message to the firebase:
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("HealthTips").child("SeasonalHealthTips");
+        databaseReference = database.getReference("Health Tips").child("Seasonal Health Tips");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -61,10 +65,16 @@ public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String seasonalTips = seasonalTipsValue.getText().toString();
-                healthTipsModel.setSeasonalHealthTipsValue(seasonalTips);
-                databaseReference.child(String.valueOf(maxId + 1)).setValue(healthTipsModel);
 
-                Toast.makeText(InsertDataForSeasonalHealthTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(seasonalTips)) {
+                    Toast.makeText(InsertDataForSeasonalHealthTips.this, "To insert data you'll need to type some value on the field", Toast.LENGTH_LONG).show();
+
+                } else {
+                    seasonalHealthTipsModel.setSeasonalHealthTipsValue(seasonalTips);
+                    databaseReference.child(String.valueOf(maxId + 1)).setValue(seasonalHealthTipsModel);
+
+                    Toast.makeText(InsertDataForSeasonalHealthTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

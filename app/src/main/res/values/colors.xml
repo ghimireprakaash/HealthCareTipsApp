@@ -18,6 +18,8 @@
 
     <color name="colorCustomLoginButton">#102B81</color>
 
-    <color name="colorLightBlue">#169DF6</color>
+
+            <!--Used for fab button-->
+    <color name="colorLightBlue">#38AFFD</color>
 
 </resources>

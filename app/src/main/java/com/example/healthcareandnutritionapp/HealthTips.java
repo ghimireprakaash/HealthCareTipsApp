@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class HealthTips extends AppCompatActivity {
-    TextView health_Tips, heart_Tips, relieve_Stress, seasonal_Tips;
+    TextView health_Tips, menHealthTips, womenHealthTips, heart_Tips, relieve_Stress, seasonal_Tips;
 
 
     //Body TextViews where data that are inserted to be shown...
@@ -20,6 +20,8 @@ public class HealthTips extends AppCompatActivity {
         setContentView(R.layout.activity_health_tips);
 
         health_Tips = findViewById(R.id.generalHealthTips);
+        menHealthTips = findViewById(R.id.menHealthTips);
+        womenHealthTips = findViewById(R.id.womenHealthTips);
         heart_Tips = findViewById(R.id.tipsHeart);
         relieve_Stress = findViewById(R.id.stressTips);
         seasonal_Tips = findViewById(R.id.seasonTips);
@@ -33,6 +35,23 @@ public class HealthTips extends AppCompatActivity {
             }
         });
 
+
+        menHealthTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthTips.this, HealthTipsForMen.class));
+            }
+        });
+
+
+        womenHealthTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthTips.this, HealthTipsForWomen.class));
+            }
+        });
+
+
         heart_Tips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,12 +59,14 @@ public class HealthTips extends AppCompatActivity {
             }
         });
 
+
         relieve_Stress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthTips.this, RelieveStressTips.class));
             }
         });
+
 
         seasonal_Tips.setOnClickListener(new View.OnClickListener() {
             @Override

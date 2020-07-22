@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NutritionForWomen">
+    tools:context=".HealthTipsForWomen">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/nutritionTips_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorToolbarBackground">
+        android:background="@color/colorToolbarBackground"
+        app:theme="@style/ToolbarTheme">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nutrition Tips For Women"
-            android:textSize="23sp"
-            android:textColor="#ffffff"
-            android:gravity="center_horizontal"/>
-
+            android:text="Health Tips focused for Women"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"/>
     </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/womenHealthTipsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar_womenHealthTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/nutritionTipsWomen_fab"
+            android:id="@+id/womenHealthTips_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_sign"
             android:background="@color/colorLightBlue"
             app:rippleColor="@color/colorBlack"
-            app:fabSize="normal"
+            app:fabSize="mini"
             android:layout_gravity="bottom|end"
             android:layout_margin="30dp"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</LinearLayout>
+</RelativeLayout>

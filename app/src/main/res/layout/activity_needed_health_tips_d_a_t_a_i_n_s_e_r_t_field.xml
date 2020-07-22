@@ -25,15 +25,14 @@
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:id="@+id/generalTipsValue"
+        android:id="@+id/healthTipsValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Value"
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:autofillHints=""
-        android:inputType="text"/>
+        android:inputType="textMultiLine"/>
 
     <Button
         android:id="@+id/btnInsert"
@@ -45,5 +44,17 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:padding="16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

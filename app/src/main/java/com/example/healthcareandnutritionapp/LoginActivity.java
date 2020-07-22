@@ -19,11 +19,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
-    EditText editName,editPassword;
-//    EditText mUserName, mUserPassword;
+    EditText editName, editPassword;
+
     Button logInBtn;
     ProgressBar progressBar;
 
@@ -73,19 +74,23 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if(task.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    progressBar.setVisibility(View.INVISIBLE);
+
                     finish();
 
                             /*Initializing ProgressBar Visibility to GONE or INVISIBLE after log In button
                              is pressed and when there is network connection available - means when onBackPressed
                              method is called progress bar is gone.*/
-                    progressBar.setVisibility(View.INVISIBLE);
 
                 } else {
                     if (!isConnected(LoginActivity.this)){
                         buildDialog(LoginActivity.this).show();
+
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
 
                     if(isConnected(LoginActivity.this)) {
@@ -133,13 +138,30 @@ public class LoginActivity extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                finish();
             }
         });
         return builder;
     }
 
-//    public void login(View view) {
-//        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
-//    }
+
+    public void signUpAccount(View view) {
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+    }
+
+
+
+
+    //Get Current User
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+    }
 }

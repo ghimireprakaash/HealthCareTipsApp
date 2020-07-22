@@ -2,13 +2,12 @@ package com.example.healthcareandnutritionapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +28,8 @@ public class InsertDataForRelievingStress extends AppCompatActivity {
     DatabaseReference databaseReference;
 
     //Declaring variable of the Member Class
-    HealthTips__Model healthTipsModel;
+    Model relieveStressHealthTipsModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +39,14 @@ public class InsertDataForRelievingStress extends AppCompatActivity {
         stressRelieveValue = findViewById(R.id.stressRelieveValue);
         btnINSERT = findViewById(R.id.btnInsert);
 
+
         //Initializing variable of the Member class i.e GeneralHealthTips
-        healthTipsModel = new HealthTips__Model();
+        relieveStressHealthTipsModel = new Model();
+
 
         //Write a message to the firebase:
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("HealthTips").child("StressRelieve");
+        databaseReference = database.getReference("Health Tips").child("Stress Relieve");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -63,10 +65,16 @@ public class InsertDataForRelievingStress extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String stressRelieveTips = stressRelieveValue.getText().toString();
-                healthTipsModel.setStressReliefTipsValue(stressRelieveTips);
-                databaseReference.child(String.valueOf(maxId + 1)).setValue(healthTipsModel);
 
-                Toast.makeText(InsertDataForRelievingStress.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(stressRelieveTips)) {
+                    Toast.makeText(InsertDataForRelievingStress.this, "To insert data you'll need to type some value on the field", Toast.LENGTH_LONG).show();
+
+                } else {
+                    relieveStressHealthTipsModel.setStressReliefTipsValue(stressRelieveTips);
+                    databaseReference.child(String.valueOf(maxId + 1)).setValue(relieveStressHealthTipsModel);
+
+                    Toast.makeText(InsertDataForRelievingStress.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -1,17 +1,59 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.ProgressBar;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SeasonalTips extends AppCompatActivity {
+
+    RecyclerView seasonalTipsRecyclerView;
+
+    // Creating object of RecyclerViewAdapter
+    AdapterRecyclerView adapterRecyclerView;
+
+
+    ProgressBar progressBar_SeasonalTips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seasonal_tips);
+
+        progressBar_SeasonalTips = findViewById(R.id.progressBar_SeasonalNutritionTips);
+
+        seasonalTipsRecyclerView = findViewById(R.id.seasonalNutritionRecyclerView);
+        seasonalTipsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<Model> options =
+                new FirebaseRecyclerOptions.Builder<Model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Health Tips").child("Seasonal Health Tips"), Model.class)
+                        .build();
+
+        adapterRecyclerView = new AdapterRecyclerView(options);
+        seasonalTipsRecyclerView.setAdapter(adapterRecyclerView);
+
+
+//        progressBar_SeasonalTips.setVisibility(View.VISIBLE);
+//
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                progressBar_SeasonalTips.setVisibility(View.GONE);
+//            }
+//        }, 2500);
+
+
+
+
 
         FloatingActionButton seasonalTips_fab = findViewById(R.id.seasonalHealthTips_fab);
 
@@ -23,5 +65,24 @@ public class SeasonalTips extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+        progressBar_SeasonalTips.setVisibility(View.VISIBLE);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressBar_SeasonalTips.setVisibility(View.GONE);
+
+                adapterRecyclerView.startListening();
+
+            }
+        }, 2500);
     }
 }
