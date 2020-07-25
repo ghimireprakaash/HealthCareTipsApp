@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HealthyHeartTips extends AppCompatActivity {
-
+    Button buttonBackHealthyHeartTips;
     RecyclerView heartTipsRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -27,6 +28,14 @@ public class HealthyHeartTips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthy_heart_tips);
+
+        buttonBackHealthyHeartTips = findViewById(R.id.backArrow);
+        buttonBackHealthyHeartTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthyHeartTips.this, MainActivity.class));
+            }
+        });
 
 
         progressBar_HeartTips = findViewById(R.id.progressBar_HeartTips);

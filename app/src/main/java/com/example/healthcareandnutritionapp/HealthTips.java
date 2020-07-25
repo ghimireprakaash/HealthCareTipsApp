@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HealthTips extends AppCompatActivity {
     TextView health_Tips, menHealthTips, womenHealthTips, heart_Tips, relieve_Stress, seasonal_Tips;
-
+    Button buttonBackHealthTips;
 
     //Body TextViews where data that are inserted to be shown...
     //TextView resultGeneralTips1, resultGeneralTips2, resultGeneralTips3, resultGeneralTips4, resultGeneralTips5,
@@ -25,6 +26,16 @@ public class HealthTips extends AppCompatActivity {
         heart_Tips = findViewById(R.id.tipsHeart);
         relieve_Stress = findViewById(R.id.stressTips);
         seasonal_Tips = findViewById(R.id.seasonTips);
+
+
+        buttonBackHealthTips = findViewById(R.id.backArrow);
+        buttonBackHealthTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthTips.this, MainActivity.class));
+            }
+        });
+
 
 
         //OnClick event is called for generalHealthTips i.e it switched to its respective activity.

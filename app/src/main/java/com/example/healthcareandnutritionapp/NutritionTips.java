@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class NutritionTips extends AppCompatActivity {
+    Button buttonBackNutritionTips;
+
     TextView general_Nutrition, nutrition_Children, nutrition_Men, nutrition_Women, nutritionTips_Hair, nutritionTips_skin, weight_Gain;
 
 
@@ -72,6 +75,14 @@ public class NutritionTips extends AppCompatActivity {
             }
         });
 
+
+        buttonBackNutritionTips = findViewById(R.id.backArrow);
+        buttonBackNutritionTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, MainActivity.class));
+            }
+        });
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -14,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class NeededHealthTips extends AppCompatActivity {
 //    EditText generalTipsValue1, generalTipsValue2, generalTipsValue3, generalTipsValue4, generalTipsValue5, generalTipsValue6;
+    Button buttonBackHealthTips;
 
     RecyclerView healthTipsRecyclerView;
 
@@ -29,6 +31,16 @@ public class NeededHealthTips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_needed_health_tips);
+
+        buttonBackHealthTips = findViewById(R.id.backArrow);
+        buttonBackHealthTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NeededHealthTips.this, MainActivity.class));
+            }
+        });
+
+
 
         progressBar_HealthTips = findViewById(R.id.progressBar_HealthTips);
 

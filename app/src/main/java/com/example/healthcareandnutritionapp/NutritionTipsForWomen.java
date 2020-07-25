@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NutritionTipsForWomen extends AppCompatActivity {
+    Button buttonBackWomenTips;
+
     RecyclerView womenNutritionRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -25,6 +28,15 @@ public class NutritionTipsForWomen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips_for_women);
+
+        buttonBackWomenTips = findViewById(R.id.backArrow);
+        buttonBackWomenTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTipsForWomen.this, NutritionTips.class));
+            }
+        });
+
 
         progressBar_WomenNutritionTips = findViewById(R.id.progressBar_WomenNutritionTips);
 

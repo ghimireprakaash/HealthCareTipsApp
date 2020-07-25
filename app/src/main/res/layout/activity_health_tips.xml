@@ -6,27 +6,44 @@
     android:layout_height="fill_parent"
     tools:context=".HealthTips">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
+        android:id="@+id/healthTips_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorToolbarBackground"
-        app:theme="@style/ToolbarTheme">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Health Tips"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite"
-            android:gravity="center"/>
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/health_tips"
+            app:titleTextColor="@color/colorWhite"
+            app:titleMarginStart="55dp"
+            android:background="@color/colorToolbarBackground"/>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="43dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/back_arrow"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:id="@+id/backArrow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/healthTips_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"

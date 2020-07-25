@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SeasonalTips extends AppCompatActivity {
+    Button buttonBackSeasonalTips;
 
     RecyclerView seasonalTipsRecyclerView;
 
@@ -26,6 +28,15 @@ public class SeasonalTips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seasonal_tips);
+
+        buttonBackSeasonalTips = findViewById(R.id.backArrow);
+        buttonBackSeasonalTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SeasonalTips.this, HealthTips.class));
+            }
+        });
+
 
         progressBar_SeasonalTips = findViewById(R.id.progressBar_SeasonalNutritionTips);
 
@@ -41,16 +52,15 @@ public class SeasonalTips extends AppCompatActivity {
         seasonalTipsRecyclerView.setAdapter(adapterRecyclerView);
 
 
-//        progressBar_SeasonalTips.setVisibility(View.VISIBLE);
-//
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                progressBar_SeasonalTips.setVisibility(View.GONE);
-//            }
-//        }, 2500);
+        progressBar_SeasonalTips.setVisibility(View.VISIBLE);
 
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressBar_SeasonalTips.setVisibility(View.GONE);
+            }
+        }, 2000);
 
 
 
@@ -71,18 +81,7 @@ public class SeasonalTips extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        adapterRecyclerView.startListening();
 
-        progressBar_SeasonalTips.setVisibility(View.VISIBLE);
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                progressBar_SeasonalTips.setVisibility(View.GONE);
-
-                adapterRecyclerView.startListening();
-
-            }
-        }, 2500);
     }
 }
