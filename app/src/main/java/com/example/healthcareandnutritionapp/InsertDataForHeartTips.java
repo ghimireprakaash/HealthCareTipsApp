@@ -1,5 +1,6 @@
 package com.example.healthcareandnutritionapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class InsertDataForHeartTips extends AppCompatActivity {
+    Button buttonBack;
 
     EditText heartTipsValue;
     long maxId = 0;
@@ -36,6 +38,14 @@ public class InsertDataForHeartTips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_data_for_heart_tips);
+
+        buttonBack = findViewById(R.id.backArrow);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InsertDataForHeartTips.this, HealthyHeartTips.class));
+            }
+        });
 
 
         heartTipsValue = findViewById(R.id.heartTipsValue);

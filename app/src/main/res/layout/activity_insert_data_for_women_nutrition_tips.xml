@@ -7,21 +7,40 @@
     android:orientation="vertical"
     tools:context=".InsertDataForWomenNutritionTips">
 
-    <androidx.appcompat.widget.Toolbar
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorToolbarBackground"
-        app:theme="@style/ToolbarTheme">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Insert Data For Women Nutrition Tips"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite"
-            android:gravity="center"/>
+            android:layout_height="?attr/actionBarSize"
+            app:title="Insert Data For Women Nutrition"
+            app:titleTextColor="@color/colorWhite"
+            app:titleMarginStart="49dp"
+            android:background="@color/colorToolbarBackground"/>
 
-    </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="43dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/back_arrow"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:id="@+id/backArrow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 
     <EditText
         android:id="@+id/womenNutritionTipsValue"

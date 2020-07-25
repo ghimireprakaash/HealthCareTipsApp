@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
 //    EditText generalTipsValue1, generalTipsValue2, generalTipsValue3, generalTipsValue4, generalTipsValue5,
 //            generalTipsValue6;
+    Button buttonBack;
 
     EditText healthTipsValueInsert;
 
@@ -39,6 +40,15 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_needed_health_tips_d_a_t_a_i_n_s_e_r_t_field);
+
+        buttonBack = findViewById(R.id.backArrow);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NeededHealthTipsDATAINSERTField.this, NeededHealthTips.class));
+            }
+        });
+
 
         healthTipsValueInsert = findViewById(R.id.healthTipsValue);
 //        generalTipsValue1 = findViewById(R.id.generalTipsValue1);
