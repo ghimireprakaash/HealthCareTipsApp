@@ -32,7 +32,7 @@ public class NeededNutritionTips extends AppCompatActivity {
         buttonBackNutritionTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NeededNutritionTips.this, MainActivity.class));
+                startActivity(new Intent(NeededNutritionTips.this, NutritionTips.class));
             }
         });
 

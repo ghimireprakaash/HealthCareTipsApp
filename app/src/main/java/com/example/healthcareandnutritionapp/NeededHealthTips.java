@@ -36,7 +36,7 @@ public class NeededHealthTips extends AppCompatActivity {
         buttonBackHealthTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NeededHealthTips.this, MainActivity.class));
+                startActivity(new Intent(NeededHealthTips.this, HealthTips.class));
             }
         });
 

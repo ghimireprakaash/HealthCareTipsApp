@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:padding="25dp">
 
             <TextView
@@ -61,7 +61,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/menHealthTips"
@@ -72,7 +72,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/womenHealthTips"
@@ -83,7 +83,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/tipsHeart"
@@ -95,7 +95,7 @@
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/stressTips"
@@ -107,7 +107,7 @@
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/seasonTips"
@@ -119,7 +119,7 @@
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
         </LinearLayout>
 

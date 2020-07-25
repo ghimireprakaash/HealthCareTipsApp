@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class NutritionForGainingWeight extends AppCompatActivity {
     Button buttonBackGainingWeight;
+
     RecyclerView weightGainNutritionRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -32,7 +33,7 @@ public class NutritionForGainingWeight extends AppCompatActivity {
         buttonBackGainingWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NutritionForGainingWeight.this, MainActivity.class));
+                startActivity(new Intent(NutritionForGainingWeight.this, NutritionTips.class));
             }
         });
 

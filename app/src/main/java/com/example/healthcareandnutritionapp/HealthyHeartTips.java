@@ -33,7 +33,7 @@ public class HealthyHeartTips extends AppCompatActivity {
         buttonBackHealthyHeartTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HealthyHeartTips.this, MainActivity.class));
+                startActivity(new Intent(HealthyHeartTips.this, HealthTips.class));
             }
         });
 

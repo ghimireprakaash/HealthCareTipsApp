@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:padding="25dp">
 
             <TextView
@@ -60,7 +60,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/nutritionTips_Children"
@@ -71,8 +71,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/nutritionTips_Men"
@@ -83,8 +82,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/nutritionTips_Women"
@@ -95,8 +93,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/nutritionTips_Hair"
@@ -107,8 +104,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/nutritionTips_Skin"
@@ -119,8 +115,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:id="@+id/weightGainTips"
@@ -131,8 +126,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="7dp"/>
+                android:layout_margin="5dp"/>
 
 <!--            <TextView-->
 <!--                android:id="@+id/bloodPressureTips"-->
