@@ -1,14 +1,14 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class NutritionTips extends AppCompatActivity {
-    Button buttonBackNutritionTips;
+    private Toolbar toolbar;
 
     TextView general_Nutrition, nutrition_Children, nutrition_Men, nutrition_Women, nutritionTips_Hair, nutritionTips_skin, weight_Gain;
 
@@ -17,12 +17,15 @@ public class NutritionTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_tips);
 
-
-        buttonBackNutritionTips = findViewById(R.id.buttonBackNutritionTips);
-        buttonBackNutritionTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -40,6 +43,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, GeneralNutrition.class));
+                finish();
             }
         });
 
@@ -48,6 +52,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForChildren.class));
+                finish();
             }
         });
 
@@ -56,6 +61,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForMen.class));
+                finish();
             }
         });
 
@@ -64,6 +70,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForWomen.class));
+                finish();
             }
         });
 
@@ -72,6 +79,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForHealthyHair.class));
+                finish();
             }
         });
 
@@ -80,6 +88,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForHealthySkin.class));
+                finish();
             }
         });
 
@@ -88,6 +97,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForGainingWeight.class));
+                finish();
             }
         });
 

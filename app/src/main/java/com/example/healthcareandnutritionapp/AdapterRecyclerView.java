@@ -20,6 +20,8 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
 
         // Getting Health Tips value back from firebase database to retrieve in a card view
         holder.healthTipsValue.setText(model.getHealthTipsValue());
+        holder.menHealthTipsValue.setText(model.getMenHealthTipsValue());
+        holder.womenHealthTipsValue.setText(model.getWomenHealthTipsValue());
         holder.healthyHeartTipsValue.setText(model.getHealthyHeartTipsValue());
         holder.stressRelieveTipsValue.setText(model.getStressReliefTipsValue());
         holder.seasonalTipsValue.setText(model.getSeasonalHealthTipsValue());
@@ -50,6 +52,8 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
         The below text view in java code defines the references of its respective TextView of Health Tips in card view
          */
         TextView healthTipsValue;
+        TextView menHealthTipsValue;
+        TextView womenHealthTipsValue;
         TextView healthyHeartTipsValue;
         TextView stressRelieveTipsValue;
         TextView seasonalTipsValue;
@@ -83,6 +87,8 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
              */
 
             healthTipsValue = itemView.findViewById(R.id.healthTips_DataDisplay);
+            menHealthTipsValue = itemView.findViewById(R.id.menHealthTips_DataDisplay);
+            womenHealthTipsValue = itemView.findViewById(R.id.womenHealthTips_DataDisplay);
             healthyHeartTipsValue = itemView.findViewById(R.id.heartTips_DataDisplay);
             stressRelieveTipsValue = itemView.findViewById(R.id.stressRelieveTips_DataDisplay);
             seasonalTipsValue = itemView.findViewById(R.id.seasonalTips_DataDisplay);
@@ -105,10 +111,4 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
             weightGainNutritionTipsValue = itemView.findViewById(R.id.weightGainNutritionTips_DataDisplay);
         }
     }
-//    @Override
-//    public void onDataChanged() {
-//        if (progressBar != null) {
-//            progressBar.setVisibility(View.GONE);
-//        }
-//    }
 }

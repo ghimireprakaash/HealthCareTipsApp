@@ -12,21 +12,20 @@ import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class HealthyHeart extends AppCompatActivity {
+public class HealthTipsForMen extends AppCompatActivity {
     private Toolbar toolbar;
 
-    RecyclerView heartTipsRecyclerView;
+    RecyclerView menHealthTipsRecyclerView;
 
     // Creating object of RecyclerViewAdapter
     AdapterRecyclerView adapterRecyclerView;
 
-    ProgressBar healthyHeartTips_ProgressBar;
+    ProgressBar progressBar_menHealthTips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_healthy_heart);
-
+        setContentView(R.layout.activity_health_tips_for_men);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,32 +34,40 @@ public class HealthyHeart extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HealthyHeart.this, HealthTips.class));
+                startActivity(new Intent(HealthTipsForMen.this, HealthTips.class));
                 finish();
             }
         });
 
-        healthyHeartTips_ProgressBar = findViewById(R.id.healthyHeartTips_ProgressBar);
 
-        heartTipsRecyclerView = findViewById(R.id.heartTipsRecyclerView);
-        heartTipsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        progressBar_menHealthTips = findViewById(R.id.progressBar_menHealthTips);
+
+
+        menHealthTipsRecyclerView = findViewById(R.id.menHealthTipsRecyclerView);
+        menHealthTipsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Model> options =
                 new FirebaseRecyclerOptions.Builder<Model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Health Tips").child("Healthy Heart Tips"), Model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Health Tips").child("Health Tips focused for Men"), Model.class)
                         .build();
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        healthyHeartTips_ProgressBar.setVisibility(View.VISIBLE);
-        new Handler().postDelayed(new Runnable() {
+        menHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
+
+        progressBar_menHealthTips.setVisibility(View.VISIBLE);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                healthyHeartTips_ProgressBar.setVisibility(View.GONE);
-                heartTipsRecyclerView.setAdapter(adapterRecyclerView);
+                progressBar_menHealthTips.setVisibility(View.GONE);
+                onStart();
             }
-        },1000);
+        }, 2000);
     }
+
 
     @Override
     protected void onStart() {

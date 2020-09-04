@@ -16,6 +16,43 @@ public class Model {
     public void setHealthTipsValue(String healthTipsValue) {
         this.healthTipsValue = healthTipsValue;
     }
+    //End of General Health Tips
+
+
+
+
+    // Defining String to get and set value for Men Health Tips and also adding getter and setter
+
+    private String menHealthTipsValue;
+
+    public String getMenHealthTipsValue() {
+        return menHealthTipsValue;
+    }
+
+    public void setMenHealthTipsValue(String menHealthTipsValue) {
+        this.menHealthTipsValue = menHealthTipsValue;
+    }
+
+    //End of Men Health Tips from Health Tips Activity
+
+
+
+
+    // Defining String to get and set value for Men Health Tips and also adding getter and setter
+
+    private String womenHealthTipsValue;
+
+    public String getWomenHealthTipsValue() {
+        return womenHealthTipsValue;
+    }
+
+    public void setWomenHealthTipsValue(String womenHealthTipsValue) {
+        this.womenHealthTipsValue = womenHealthTipsValue;
+    }
+
+    //End of Men Health Tips from Health Tips Activity
+
+
 
 
     // Defining String to get and set value for Healthy Heart Tips and also adding getter and setters

@@ -1,19 +1,19 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SeasonalTips extends AppCompatActivity {
-    Button buttonBackSeasonalTips;
+    private Toolbar toolbar;
 
     RecyclerView seasonalTipsRecyclerView;
 
@@ -27,11 +27,15 @@ public class SeasonalTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seasonal_tips);
 
-        buttonBackSeasonalTips = findViewById(R.id.buttonBackSeasonalTips);
-        buttonBackSeasonalTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SeasonalTips.this, HealthTips.class));
+                finish();
             }
         });
 

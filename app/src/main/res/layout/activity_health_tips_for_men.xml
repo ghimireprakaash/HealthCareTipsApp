@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NutritionTipsForChildren">
+    tools:context=".HealthTipsForMen">
 
     <RelativeLayout
         android:id="@+id/toolbarLayout"
@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="@string/nutrition_tips_needed_for_children"
+            app:title="@string/health_tips_for_men"
             app:titleTextColor="@color/colorWhite"
             android:background="@color/colorToolbarBackground"
             android:theme="@style/AppTheme.AppBarOverlay"/>
@@ -24,17 +24,16 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/childrenNutritionRecyclerView"
+        android:id="@+id/menHealthTipsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbarLayout"/>
 
     <ProgressBar
-        android:id="@+id/childrenNutritionTips_ProgressBar"
+        android:id="@+id/progressBar_menHealthTips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar"
         android:layout_centerInParent="true"
-        android:visibility="gone"/>
+        android:visibility="invisible"/>
 
 </RelativeLayout>

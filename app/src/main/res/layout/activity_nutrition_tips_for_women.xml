@@ -6,56 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".NutritionTipsForWomen">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
+        android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorToolbarBackground">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/nutrition_tips_needed_for_women"
+            app:titleTextColor="@color/colorWhite"
+            android:background="@color/colorToolbarBackground"
+            android:theme="@style/AppTheme.AppBarOverlay"/>
 
-            <RelativeLayout
-                android:layout_width="30dp"
-                android:layout_height="30dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/whiteleftarrow"/>
-
-                <Button
-                    android:id="@+id/buttonBackWomenTips"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"/>
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tips_for_women"
-                android:textSize="20sp"
-                android:textColor="#ffffff"
-                android:gravity="center"
-                android:padding="10dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="20dp"/>
-
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>
+    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/womenNutritionRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/toolbarLayout"/>
 
     <ProgressBar
         android:id="@+id/womenNutritionTips_ProgressBar"

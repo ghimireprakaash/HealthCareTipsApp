@@ -4,17 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SubClassHealthTips extends AppCompatActivity {
-    Button buttonBackSubClassHealthTips;
-
+    private Toolbar toolbar;
     RecyclerView healthTipsRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -27,14 +26,17 @@ public class SubClassHealthTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_class_health_tips);
 
-        buttonBackSubClassHealthTips = findViewById(R.id.buttonBackSubClassHealthTips);
-        buttonBackSubClassHealthTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SubClassHealthTips.this, HealthTips.class));
+                finish();
             }
         });
-
 
 
         healthTips_ProgressBar = findViewById(R.id.healthTips_ProgressBar);
@@ -113,8 +115,6 @@ public class SubClassHealthTips extends AppCompatActivity {
 //    }
 
 
-
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -131,18 +131,4 @@ public class SubClassHealthTips extends AppCompatActivity {
         adapterRecyclerView.stopListening();
 
     }
-
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        if (!isConnected(SubClassHealthTips.this)) {
-//
-//            buildDialog(SubClassHealthTips.this).show();
-//
-//        } else {
-//            onStart();
-//        }
-//    }
 }

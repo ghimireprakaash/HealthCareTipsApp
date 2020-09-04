@@ -34,5 +34,7 @@
     <string name="healthy_heart_tips">Healthy Heart</string>
     <string name="stress_relieve_tips">Stress Relieve</string>
     <string name="seasonal_tips">Seasonal Tips</string>
+    <string name="health_tips_for_men">Health Tips for Men</string>
+    <string name="health_tips_for_women">Health Tips for Women</string>
 
 </resources>
