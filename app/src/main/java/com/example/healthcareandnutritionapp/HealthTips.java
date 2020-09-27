@@ -1,6 +1,7 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class HealthTips extends AppCompatActivity {
+    private Toolbar toolbar;
+
     TextView health_Tips, menHealthTips, womenHealthTips, heart_Tips, relieve_Stress, seasonal_Tips;
     Button buttonBackHealthTips;
 
@@ -20,6 +23,22 @@ public class HealthTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tips);
 
+        toolbar = findViewById(R.id.healthTips_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthTips.this, MainActivity.class));
+                finish();
+            }
+        });
+
+
+
         health_Tips = findViewById(R.id.generalHealthTips);
         menHealthTips = findViewById(R.id.menHealthTips);
         womenHealthTips = findViewById(R.id.womenHealthTips);
@@ -28,13 +47,7 @@ public class HealthTips extends AppCompatActivity {
         seasonal_Tips = findViewById(R.id.seasonTips);
 
 
-        buttonBackHealthTips = findViewById(R.id.backArrow);
-        buttonBackHealthTips.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HealthTips.this, MainActivity.class));
-            }
-        });
+
 
 
 

@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">HealthCare Nutrition App</string>
+    <string name="splash_title">HealthCare App</string>
+
+
+    <!--    Login strings and Register strings   -->
+    <string name="admin_login">ADMIN Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="create_admin_account">Create Admin Account :</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="register_account">Register Account</string>
+    <string name="register">Register</string>
+
 
 
     <!--Main Activity Text-->
@@ -8,16 +22,28 @@
 
 
     <!--From Inside Health Tips Activity-->
-    <string name="health_tips_inner_class">Health Tips</string>
-    <string name="tips_for_children">Tips for Children</string>
-    <string name="healthy_heart_tips">Healthy Heart</string>
+    <string name="men_health_tips">Men Health Tips</string>
+    <string name="women_health_tips">Women Health Tips</string>
+    <string name="healthy_heart">Healthy Heart</string>
     <string name="stress_relieve_tips">Stress Relieve</string>
     <string name="seasonal_tips">Seasonal Tips</string>
+
+    <string name="health_tips_inner_class">Health Tips</string>
+    <string name="tips_for_children">Tips for Children</string>
     <string name="health_tips_for_men">Health Tips for Men</string>
     <string name="health_tips_for_women">Health Tips for Women</string>
+    <string name="healthy_heart_tips">Healthy Heart</string>
 
 
     <!--From inside Nutrition Tips Activity-->
+    <string name="tips_needed_for_children">Tips Needed for Children</string>
+    <string name="tips_needed_for_men">Tips Needed for Men</string>
+    <string name="tips_needed_for_women">Tips Needed for Women</string>
+    <string name="tips_for_healthy_hair">Tips for Healthy Hair</string>
+    <string name="tips_for_healthy_skin">Tips for Healthy Skin</string>
+    <string name="weight_gain">Weight Gain</string>
+
+
     <string name="nutrition_tips_toolbar">Nutrition Tips</string>
     <string name="general_nutrition_tips">General Nutrition Tips</string>
     <string name="nutrition_tips_needed_for_children">Tips Needed for Children</string>
@@ -27,7 +53,6 @@
     <string name="nutrition_tips_for_healthy_skin">Tips for Healthy Skin</string>
     <string name="nutrition_tips_weight_gain">Weight Gain</string>
     <string name="weight_gain_tips">Weight Gain Tips</string>
-    <string name="tips_for_healthy_hair">Tips for Healthy Hair</string>
-    <string name="tips_for_healthy_skin">Tips for Healthy Skin</string>
+
 
 </resources>

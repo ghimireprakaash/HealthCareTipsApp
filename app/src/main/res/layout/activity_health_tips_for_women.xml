@@ -7,47 +7,22 @@
     android:orientation="vertical"
     tools:context=".HealthTipsForWomen">
 
-    <RelativeLayout
-        android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/health_tips_for_women"
-            app:titleTextColor="@color/colorWhite"
-            app:titleMarginStart="55dp"
-            android:background="@color/colorToolbarBackground"/>
-
-        <RelativeLayout
-            android:layout_width="45dp"
-            android:layout_height="43dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/back_arrow"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"/>
-
-            <Button
-                android:id="@+id/backArrow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"/>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/womenHealthTips_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/health_tips_for_women"
+        app:titleTextColor="@color/colorWhite"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorToolbarBackground"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/womenHealthTipsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/womenHealthTips_toolbar"/>
 
     <ProgressBar
         android:id="@+id/progressBar_womenHealthTips"

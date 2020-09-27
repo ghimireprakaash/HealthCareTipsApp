@@ -6,38 +6,15 @@
     android:layout_height="fill_parent"
     tools:context=".HealthTips">
 
-    <RelativeLayout
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/healthTips_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/health_tips"
-            app:titleTextColor="@color/colorWhite"
-            app:titleMarginStart="55dp"
-            android:background="@color/colorToolbarBackground"/>
-
-        <RelativeLayout
-            android:layout_width="45dp"
-            android:layout_height="43dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/back_arrow"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"/>
-
-            <Button
-                android:id="@+id/backArrow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"/>
-
-        </RelativeLayout>
-    </RelativeLayout>
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/health_tips"
+        app:titleTextColor="@color/colorWhite"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorToolbarBackground"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
 
     <ScrollView
@@ -49,77 +26,72 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:padding="25dp">
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/generalHealthTips"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Health Tips"
-                android:textSize="19sp"
+                android:text="@string/health_tips"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
-                android:gravity="center"
-                android:layout_margin="5dp"/>
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/menHealthTips"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Men Health Tips"
-                android:textSize="19sp"
+                android:text="@string/men_health_tips"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id="@+id/womenHealthTips"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Women Health Tips"
-                android:textSize="19sp"
+                android:text="@string/women_health_tips"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id="@+id/tipsHeart"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Healthy Heart"
-                android:textSize="19sp"
+                android:text="@string/healthy_heart"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id="@+id/stressTips"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Relieve Stress"
-                android:textSize="19sp"
+                android:text="@string/stress_relieve_tips"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"/>
 
             <TextView
                 android:id="@+id/seasonTips"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Seasonal Tips"
-                android:textSize="19sp"
+                android:text="@string/seasonal_tips"
+                android:textSize="17sp"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/custom_text_view"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"/>
 
         </LinearLayout>
 

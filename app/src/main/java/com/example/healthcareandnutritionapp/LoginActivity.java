@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = editPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)){
-            editName.setError("Username Required");
+            editName.setError("Email Required");
             return;
         }
         if (TextUtils.isEmpty(password)){
@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(isConnected(LoginActivity.this)) {
                         Toast.makeText(LoginActivity.this,
-                                "Email and Password doesn't match our database.", Toast.LENGTH_LONG).show();
+                                "Email or Password doesn't match our database.", Toast.LENGTH_LONG).show();
                     }
                             /*Initializing Progress Bar Visibility to GONE or INVISIBLE after log In button
                              is pressed and when network connection isn't available */

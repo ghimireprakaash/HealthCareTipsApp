@@ -25,6 +25,8 @@ public class Model {
 
 
 
+
+
     // Defining String to get and set value for Men Health Tips and also adding getter and setter
 
     private String menHealthTipsValue;
@@ -38,6 +40,8 @@ public class Model {
     }
 
     //End of Men Health Tips from Health Tips Activity
+
+
 
 
 
@@ -59,6 +63,8 @@ public class Model {
 
 
 
+
+
     // Defining String to get and set value for Healthy Heart Tips and also adding getter and setters
 
     String healthyHeartTipsValue;
@@ -72,6 +78,8 @@ public class Model {
     }
 
     //End of Heart Tips
+
+
 
 
 
@@ -93,6 +101,8 @@ public class Model {
 
 
 
+
+
     // Defining String to get and set value for Seasonal Health Tips and also adding getter and setter
 
     private String seasonalHealthTipsValue;
@@ -106,6 +116,8 @@ public class Model {
     }
 
     /* This is the End part of Health Tips and the next activity contents are to be defined */
+
+
 
 
 
@@ -128,6 +140,8 @@ public class Model {
 
 
 
+
+
     // The below code is of other activity i.e(sub-activity) 'Nutrition Tips that is focused for only Children' of same activity
 
     private String nutritionTipsForChildrenValue;
@@ -141,6 +155,8 @@ public class Model {
     }
 
     // End of Nutrition Tips focused for only Children
+
+
 
 
 
@@ -162,6 +178,8 @@ public class Model {
 
 
 
+
+
     // The below defined is of other activity i.e(sub-activity) 'Nutrition Tips For Women' of same activity
 
     private String nutritionTipsForWomenValue;
@@ -175,6 +193,8 @@ public class Model {
     }
 
     // End of Nutrition Tips focused for only Women
+
+
 
 
 
@@ -195,6 +215,8 @@ public class Model {
 
 
 
+
+
     // The below defined is of other activity i.e(sub-activity) 'Nutrition Tips For Healthy Skin' of same activity
 
     private String nutritionTipsForHealthySkinValue;
@@ -208,6 +230,8 @@ public class Model {
     }
 
     // End of Nutrition Tips For Skin Hair
+
+
 
 
 

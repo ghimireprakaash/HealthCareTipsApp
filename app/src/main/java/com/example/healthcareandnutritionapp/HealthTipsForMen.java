@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HealthTipsForMen extends AppCompatActivity {
-    Button buttonBackHealthTipsMen;
+    private Toolbar toolbar;
 
     RecyclerView menHealthTipsRecyclerView;
 
@@ -29,11 +29,17 @@ public class HealthTipsForMen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tips_for_men);
 
-        buttonBackHealthTipsMen = findViewById(R.id.backArrow);
-        buttonBackHealthTipsMen.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.menHealthTips_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthTipsForMen.this, HealthTips.class));
+                finish();
             }
         });
 
@@ -51,8 +57,6 @@ public class HealthTipsForMen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        menHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_menHealthTips.setVisibility(View.VISIBLE);
 
@@ -61,9 +65,11 @@ public class HealthTipsForMen extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_menHealthTips.setVisibility(View.GONE);
-                onStart();
+
+                menHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

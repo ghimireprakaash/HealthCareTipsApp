@@ -1,20 +1,21 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NeededNutritionTips extends AppCompatActivity {
-    Button buttonBackNutritionTips;
+    private Toolbar toolbar;
+
     RecyclerView nutritionTipsRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -28,11 +29,17 @@ public class NeededNutritionTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_needed_nutrition_tips);
 
-        buttonBackNutritionTips = findViewById(R.id.backArrow);
-        buttonBackNutritionTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NeededNutritionTips.this, NutritionTips.class));
+                finish();
             }
         });
 
@@ -49,7 +56,6 @@ public class NeededNutritionTips extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        nutritionTipsRecyclerView.setAdapter(adapterRecyclerView);
 
 
         progressBar_NutritionTips.setVisibility(View.VISIBLE);
@@ -59,9 +65,11 @@ public class NeededNutritionTips extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_NutritionTips.setVisibility(View.GONE);
-                onStart();
+
+                nutritionTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

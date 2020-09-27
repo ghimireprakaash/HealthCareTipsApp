@@ -1,14 +1,14 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class NutritionTips extends AppCompatActivity {
-    Button buttonBackNutritionTips;
+    private Toolbar toolbar;
 
     TextView general_Nutrition, nutrition_Children, nutrition_Men, nutrition_Women, nutritionTips_Hair, nutritionTips_skin, weight_Gain;
 
@@ -18,6 +18,22 @@ public class NutritionTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_tips);
 
+
+        toolbar = findViewById(R.id.nutritionTips_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NutritionTips.this, MainActivity.class));
+                finish();
+            }
+        });
+
+
         general_Nutrition = findViewById(R.id.generalNutritionTips);
         nutrition_Children = findViewById(R.id.nutritionTips_Children);
         nutrition_Men = findViewById(R.id.nutritionTips_Men);
@@ -26,10 +42,12 @@ public class NutritionTips extends AppCompatActivity {
         nutritionTips_skin = findViewById(R.id.nutritionTips_Skin);
         weight_Gain = findViewById(R.id.weightGainTips);
 
+
         general_Nutrition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NeededNutritionTips.class));
+                finish();
             }
         });
 
@@ -37,6 +55,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForChildren.class));
+                finish();
             }
         });
 
@@ -44,6 +63,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForMen.class));
+                finish();
             }
         });
 
@@ -51,6 +71,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForWomen.class));
+                finish();
             }
         });
 
@@ -58,6 +79,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForHair.class));
+                finish();
             }
         });
 
@@ -65,6 +87,7 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionTipsForSkin.class));
+                finish();
             }
         });
 
@@ -72,25 +95,8 @@ public class NutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTips.this, NutritionForGainingWeight.class));
+                finish();
             }
         });
-
-
-        buttonBackNutritionTips = findViewById(R.id.backArrow);
-        buttonBackNutritionTips.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NutritionTips.this, MainActivity.class));
-            }
-        });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-        Intent intent = new Intent(NutritionTips.this, MainActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right);
     }
 }

@@ -1,21 +1,22 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NeededHealthTips extends AppCompatActivity {
+    private Toolbar toolbar;
+
 //    EditText generalTipsValue1, generalTipsValue2, generalTipsValue3, generalTipsValue4, generalTipsValue5, generalTipsValue6;
-    Button buttonBackHealthTips;
 
     RecyclerView healthTipsRecyclerView;
 
@@ -32,11 +33,17 @@ public class NeededHealthTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_needed_health_tips);
 
-        buttonBackHealthTips = findViewById(R.id.backArrow);
-        buttonBackHealthTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(NeededHealthTips.this, HealthTips.class));
+                finish();
             }
         });
 
@@ -55,7 +62,6 @@ public class NeededHealthTips extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        healthTipsRecyclerView.setAdapter(adapterRecyclerView);
 
 
         progressBar_HealthTips.setVisibility(View.VISIBLE);
@@ -65,9 +71,11 @@ public class NeededHealthTips extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_HealthTips.setVisibility(View.GONE);
-                onStart();
+
+                healthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

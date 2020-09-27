@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RelieveStressTips extends AppCompatActivity {
-    Button buttonBackStressRelieveTips;
+    private Toolbar toolbar;
 
     RecyclerView stressRelieveRecyclerView;
 
@@ -29,11 +29,17 @@ public class RelieveStressTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relieve_stress_tips);
 
-        buttonBackStressRelieveTips = findViewById(R.id.backArrow);
-        buttonBackStressRelieveTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.stressRelieve_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RelieveStressTips.this, HealthTips.class));
+                finish();
             }
         });
 
@@ -49,7 +55,6 @@ public class RelieveStressTips extends AppCompatActivity {
                         .build();
 
         adapterRecyclerView = new AdapterRecyclerView(options);
-        stressRelieveRecyclerView.setAdapter(adapterRecyclerView);
 
 
         progressBar_StressRelieve.setVisibility(View.VISIBLE);
@@ -59,9 +64,12 @@ public class RelieveStressTips extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_StressRelieve.setVisibility(View.GONE);
-                onStart();
+
+                stressRelieveRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
+
 
 
         FloatingActionButton relieveStress_fab = findViewById(R.id.relieveStress_fab);

@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NutritionTipsForWomen extends AppCompatActivity {
-    Button buttonBackWomenTips;
+    private Toolbar toolbar;
 
     RecyclerView womenNutritionRecyclerView;
 
@@ -29,11 +29,17 @@ public class NutritionTipsForWomen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips_for_women);
 
-        buttonBackWomenTips = findViewById(R.id.backArrow);
-        buttonBackWomenTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.womenNutrition_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTipsForWomen.this, NutritionTips.class));
+                finish();
             }
         });
 
@@ -50,8 +56,6 @@ public class NutritionTipsForWomen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        womenNutritionRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_WomenNutritionTips.setVisibility(View.VISIBLE);
 
@@ -60,9 +64,11 @@ public class NutritionTipsForWomen extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_WomenNutritionTips.setVisibility(View.GONE);
-                onStart();
+
+                womenNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

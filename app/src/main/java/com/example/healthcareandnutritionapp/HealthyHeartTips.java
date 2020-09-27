@@ -1,20 +1,21 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HealthyHeartTips extends AppCompatActivity {
-    Button buttonBackHealthyHeartTips;
+    private Toolbar toolbar;
+
     RecyclerView heartTipsRecyclerView;
 
     // Creating object of RecyclerViewAdapter
@@ -29,11 +30,17 @@ public class HealthyHeartTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthy_heart_tips);
 
-        buttonBackHealthyHeartTips = findViewById(R.id.backArrow);
-        buttonBackHealthyHeartTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.healthHeartTips_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthyHeartTips.this, HealthTips.class));
+                finish();
             }
         });
 
@@ -53,7 +60,6 @@ public class HealthyHeartTips extends AppCompatActivity {
 
 
         adapterRecyclerView = new AdapterRecyclerView(options);
-        heartTipsRecyclerView.setAdapter(adapterRecyclerView);
 
 
 
@@ -64,9 +70,11 @@ public class HealthyHeartTips extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_HeartTips.setVisibility(View.GONE);
-                onStart();
+
+                heartTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NutritionTipsForChildren extends AppCompatActivity {
-    Button buttonBackChildrenTips;
+    private Toolbar toolbar;
 
     RecyclerView childrenNutritionRecyclerView;
 
@@ -29,11 +29,17 @@ public class NutritionTipsForChildren extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips_for_children);
 
-        buttonBackChildrenTips = findViewById(R.id.backArrow);
-        buttonBackChildrenTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.childrenNutrition_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTipsForChildren.this, NutritionTips.class));
+                finish();
             }
         });
 
@@ -51,8 +57,6 @@ public class NutritionTipsForChildren extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        childrenNutritionRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_ChildrenNutritionTips.setVisibility(View.VISIBLE);
 
@@ -61,9 +65,11 @@ public class NutritionTipsForChildren extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_ChildrenNutritionTips.setVisibility(View.GONE);
-                onStart();
+
+                childrenNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

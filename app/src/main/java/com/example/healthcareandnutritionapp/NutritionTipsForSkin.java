@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class NutritionTipsForSkin extends AppCompatActivity {
-    Button buttonBackHealthySkinTips;
+    private Toolbar toolbar;
 
     RecyclerView skinNutritionRecyclerView;
 
@@ -29,11 +29,17 @@ public class NutritionTipsForSkin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition_tips_for_skin);
 
-        buttonBackHealthySkinTips = findViewById(R.id.backArrow);
-        buttonBackHealthySkinTips.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.skinNutrition_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NutritionTipsForSkin.this, NutritionTips.class));
+                finish();
             }
         });
 
@@ -50,8 +56,6 @@ public class NutritionTipsForSkin extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        skinNutritionRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_SkinNutritionTips.setVisibility(View.VISIBLE);
 
@@ -60,9 +64,14 @@ public class NutritionTipsForSkin extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_SkinNutritionTips.setVisibility(View.GONE);
-                onStart();
+
+                skinNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
+
+
+
 
         FloatingActionButton nutritionTipsSkin_fab = findViewById(R.id.nutritionTipsSkin_fab);
 

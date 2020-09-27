@@ -15,4 +15,11 @@
     <item name="android:textColor">@color/textColor</item>
   </style>
 
+
+  <!--  For toolbar back button icon color  -->
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+  </style>
+
+
 </resources>

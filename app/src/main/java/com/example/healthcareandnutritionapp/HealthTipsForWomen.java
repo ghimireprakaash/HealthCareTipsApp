@@ -1,20 +1,20 @@
 package com.example.healthcareandnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HealthTipsForWomen extends AppCompatActivity {
-    Button buttonBackHealthTipsWomen;
+    private Toolbar toolbar;
 
     RecyclerView womenHealthTipsRecyclerView;
 
@@ -29,11 +29,17 @@ public class HealthTipsForWomen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tips_for_women);
 
-        buttonBackHealthTipsWomen = findViewById(R.id.backArrow);
-        buttonBackHealthTipsWomen.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.womenHealthTips_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthTipsForWomen.this, HealthTips.class));
+                finish();
             }
         });
 
@@ -51,7 +57,6 @@ public class HealthTipsForWomen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        womenHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
 
 
         progressBar_womenHealthTips.setVisibility(View.VISIBLE);
@@ -61,9 +66,11 @@ public class HealthTipsForWomen extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_womenHealthTips.setVisibility(View.GONE);
-                onStart();
+
+                womenHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
 
 
 

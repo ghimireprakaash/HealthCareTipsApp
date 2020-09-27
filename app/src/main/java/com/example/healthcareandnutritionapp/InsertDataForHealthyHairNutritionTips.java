@@ -2,6 +2,7 @@ package com.example.healthcareandnutritionapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class InsertDataForHealthyHairNutritionTips extends AppCompatActivity {
-    Button buttonBack;
+    private Toolbar toolbar;
 
     EditText healthyHairTips;
 
@@ -40,11 +41,17 @@ public class InsertDataForHealthyHairNutritionTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_data_for_healthy_hair_nutrition_tips);
 
-        buttonBack = findViewById(R.id.backArrow);
-        buttonBack.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.hairNutrition_dataInsert_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(InsertDataForHealthyHairNutritionTips.this, NutritionTipsForHair.class));
+                finish();
             }
         });
 

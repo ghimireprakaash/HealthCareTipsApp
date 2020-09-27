@@ -7,39 +7,15 @@
     android:orientation="vertical"
     tools:context=".InsertDataForWomenHealthTips">
 
-    <RelativeLayout
-        android:id="@+id/toolbar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/womenHealthTips_dataInsert_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="Insert Data For Women Health Tips"
-            app:titleTextColor="@color/colorWhite"
-            app:titleMarginStart="49dp"
-            android:background="@color/colorToolbarBackground"/>
-
-        <RelativeLayout
-            android:layout_width="45dp"
-            android:layout_height="43dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/back_arrow"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"/>
-
-            <Button
-                android:id="@+id/backArrow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"/>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
+        android:layout_height="?attr/actionBarSize"
+        app:title="Insert Data For Women Health Tips"
+        app:titleTextColor="@color/colorWhite"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@color/colorToolbarBackground"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
 
     <EditText

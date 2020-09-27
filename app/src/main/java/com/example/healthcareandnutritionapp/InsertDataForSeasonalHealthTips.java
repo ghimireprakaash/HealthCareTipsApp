@@ -2,7 +2,7 @@ package com.example.healthcareandnutritionapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
-    Button buttonBack;
+    private Toolbar toolbar;
 
     EditText seasonalTipsValue;
 
@@ -40,11 +40,17 @@ public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_data_for_seasonal_health_tips);
 
-        buttonBack = findViewById(R.id.backArrow);
-        buttonBack.setOnClickListener(new View.OnClickListener() {
+        toolbar = findViewById(R.id.seasonalHealthTIps_dataInsert_toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(InsertDataForSeasonalHealthTips.this, SeasonalTips.class));
+                finish();
             }
         });
 
