@@ -54,12 +54,16 @@ public class NutritionTipsForHealthySkin extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         healthySkinNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 healthySkinNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 skinNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }

@@ -55,11 +55,14 @@ public class SeasonalTips extends AppCompatActivity {
 
 
         seasonalTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 seasonalTips_ProgressBar.setVisibility(View.GONE);
+
                 seasonalTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
 

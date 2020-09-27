@@ -54,8 +54,6 @@ public class HealthTipsForWomen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        womenHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_womenHealthTips.setVisibility(View.VISIBLE);
 
@@ -64,9 +62,11 @@ public class HealthTipsForWomen extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_womenHealthTips.setVisibility(View.GONE);
-                onStart();
+
+                womenHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
     }
 
 

@@ -53,11 +53,14 @@ public class HealthyHeart extends AppCompatActivity {
         adapterRecyclerView = new AdapterRecyclerView(options);
 
         healthyHeartTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 healthyHeartTips_ProgressBar.setVisibility(View.GONE);
+
                 heartTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }

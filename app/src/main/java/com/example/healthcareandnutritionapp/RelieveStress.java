@@ -55,11 +55,14 @@ public class RelieveStress extends AppCompatActivity {
 
 
         stressRelieveTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 stressRelieveTips_ProgressBar.setVisibility(View.GONE);
+
                 stressRelieveRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }
