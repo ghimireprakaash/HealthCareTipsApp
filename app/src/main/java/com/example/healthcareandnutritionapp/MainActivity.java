@@ -12,7 +12,7 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView health_tips, nutrition_Tips, healthy_foods;
+    TextView health_tips, nutrition_Tips;
     ViewFlipper viewFlipper;
 
     @Override
@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
         health_tips = findViewById(R.id.health_tips);
         nutrition_Tips = findViewById(R.id.nutrition_tips);
-        //healthy_foods = findViewById(R.id.healthy_foods);
 
         //Image Slider
         int[] images = {R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four,
-                R.drawable.five, R.drawable.six, R.drawable.seven};
+                        R.drawable.five, R.drawable.six, R.drawable.seven, R.drawable.eight,
+                        R.drawable.nine, R.drawable.ten, R.drawable.eleven};
 
         viewFlipper = findViewById(R.id.view_Flipper);
 
@@ -61,14 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-//        healthy_foods.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, HealthyFoodRecipes.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
 
