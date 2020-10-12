@@ -20,7 +20,6 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
     private Toolbar toolbar;
 //    EditText generalTipsValue1, generalTipsValue2, generalTipsValue3, generalTipsValue4, generalTipsValue5,
 //            generalTipsValue6;
-    Button buttonBack;
 
     EditText healthTipsValueInsert;
 

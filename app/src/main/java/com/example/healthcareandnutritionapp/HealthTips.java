@@ -12,7 +12,6 @@ public class HealthTips extends AppCompatActivity {
     private Toolbar toolbar;
 
     TextView health_Tips, menHealthTips, womenHealthTips, heart_Tips, relieve_Stress, seasonal_Tips;
-    Button buttonBackHealthTips;
 
     //Body TextViews where data that are inserted to be shown...
     //TextView resultGeneralTips1, resultGeneralTips2, resultGeneralTips3, resultGeneralTips4, resultGeneralTips5,
