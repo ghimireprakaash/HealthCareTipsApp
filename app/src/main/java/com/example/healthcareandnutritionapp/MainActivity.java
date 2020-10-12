@@ -30,12 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewFlipper = findViewById(R.id.view_Flipper);
 
-        //for loop
-        /*for (int i = 0; i < images.length; i++){
-            flipperImages(images[i]);
-        }*/
-
-
         //Advanced Version of For Loop
         //foreach loop
         for (int image: images){
@@ -75,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setAutoStart(true);
 
         //animation
-        viewFlipper.setInAnimation(this, android.R.anim.slide_out_right);
-        viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
+//        viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
+//        viewFlipper.setOutAnimation(this, android.R.anim.slide_in_left);
     }
 
 

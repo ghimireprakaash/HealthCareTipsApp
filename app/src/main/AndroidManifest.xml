@@ -15,8 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HealthTipsForWomen"></activity>
-        <activity android:name=".HealthTipsForMen" />
         <activity android:name=".SplashScreenAndProgressbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +27,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".HealthTips" />
         <activity android:name=".SubClassHealthTips" />
+        <activity android:name=".HealthTipsForMen" />
+        <activity android:name=".HealthTipsForWomen"/>
         <activity android:name=".HealthyHeart" />
         <activity android:name=".RelieveStress" />
         <activity android:name=".SeasonalTips" />
