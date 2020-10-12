@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         health_Tips = findViewById(R.id.health_tips);
         nutrition_Tips = findViewById(R.id.nutrition_tips);
-//        exercises_tips = findViewById(R.id.exercises_tips);
+
 
         //Image Slider
         int[] images = {R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four,
-                        R.drawable.five, R.drawable.six, R.drawable.seven};
+                        R.drawable.five, R.drawable.six, R.drawable.seven, R.drawable.eight,
+                        R.drawable.nine, R.drawable.ten, R.drawable.eleven};
 
         viewFlipper = findViewById(R.id.view_Flipper);
 
@@ -71,21 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
-
-//        exercises_tips.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, Exercises.class);
-//                startActivity(intent);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            }
-//        });
-
-        //Method onCreate last step...
     }
 
-    //onCreateOptionsMenu is used here to add menu options on the toolbar...
 
+    //onCreateOptionsMenu is used here to add menu options on the toolbar...
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
