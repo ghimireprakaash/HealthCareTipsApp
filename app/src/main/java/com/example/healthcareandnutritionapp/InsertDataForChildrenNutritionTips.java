@@ -94,6 +94,8 @@ public class InsertDataForChildrenNutritionTips extends AppCompatActivity {
                     womenNutritionTipsModel.setNutritionTipsForChildrenValue(childNutrientValue);
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(womenNutritionTipsModel);
                     Toast.makeText(InsertDataForChildrenNutritionTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    childrenNutritionTips.setText("");
                 }
             }
         });

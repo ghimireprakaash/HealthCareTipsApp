@@ -93,6 +93,8 @@ public class InsertDataForHealthyHairNutritionTips extends AppCompatActivity {
                     healthyHairNutritionTipsModel.setNutritionTipsForHealthyHairValue(healthyHairNutritionValue);
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(healthyHairNutritionTipsModel);
                     Toast.makeText(InsertDataForHealthyHairNutritionTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    healthyHairTips.setText("");
                 }
             }
         });

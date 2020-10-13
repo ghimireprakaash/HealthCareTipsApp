@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         textInputLayout_Email = findViewById(R.id.textInputLayout_Email);
         textInputLayout_Password = findViewById(R.id.textInputLayout_Password);
+
 //        registerEmail = findViewById(R.id.registerEmail);
 //        registerPassword = findViewById(R.id.registerPassword);
 

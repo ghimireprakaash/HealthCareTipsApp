@@ -81,6 +81,7 @@ public class NutritionTipsForChildren extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForChildrenNutritionTips.class));
+                finish();
             }
         });
     }

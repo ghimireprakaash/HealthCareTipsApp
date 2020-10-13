@@ -92,6 +92,8 @@ public class InsertDataForMenHealthTips extends AppCompatActivity {
                     menHealthTipsModel.setMenHealthTipsValue(healthTipsForMenValue);
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(menHealthTipsModel);
                     Toast.makeText(InsertDataForMenHealthTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    menHealthTips.setText("");
                 }
             }
         });

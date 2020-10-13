@@ -85,6 +85,7 @@ public class HealthyHeartTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthyHeartTips.this, InsertDataForHeartTips.class));
+                finish();
             }
         });
     }

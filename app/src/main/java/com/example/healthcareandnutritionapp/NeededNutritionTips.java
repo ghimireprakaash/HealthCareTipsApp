@@ -81,6 +81,7 @@ public class NeededNutritionTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForNutritionTips.class));
+                finish();
             }
         });
     }

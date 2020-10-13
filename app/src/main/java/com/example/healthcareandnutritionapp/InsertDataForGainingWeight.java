@@ -90,6 +90,8 @@ public class InsertDataForGainingWeight extends AppCompatActivity {
                     weightGainNutritionTipsModel.setNutritionTipsForGainingWeightValue(weightGainNutritionValue);
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(weightGainNutritionTipsModel);
                     Toast.makeText(InsertDataForGainingWeight.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    weightGainingNutritionTips.setText("");
                 }
             }
         });

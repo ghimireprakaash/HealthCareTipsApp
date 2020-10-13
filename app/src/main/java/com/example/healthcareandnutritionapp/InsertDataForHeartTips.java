@@ -96,8 +96,9 @@ public class InsertDataForHeartTips extends AppCompatActivity {
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(healthyHeartTipsModel);
 
                     Toast.makeText(InsertDataForHeartTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-                }
 
+                    heartTipsValue.setText("");
+                }
             }
         });
     }

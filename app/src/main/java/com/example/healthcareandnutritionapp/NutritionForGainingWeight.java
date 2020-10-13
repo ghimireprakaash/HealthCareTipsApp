@@ -79,6 +79,7 @@ public class NutritionForGainingWeight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForGainingWeight.class));
+                finish();
             }
         });
     }

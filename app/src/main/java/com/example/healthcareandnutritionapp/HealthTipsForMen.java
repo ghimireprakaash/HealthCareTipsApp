@@ -83,6 +83,7 @@ public class HealthTipsForMen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), InsertDataForMenHealthTips.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

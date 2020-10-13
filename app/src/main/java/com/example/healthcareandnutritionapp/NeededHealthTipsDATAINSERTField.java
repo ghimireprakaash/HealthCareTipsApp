@@ -100,6 +100,8 @@ public class NeededHealthTipsDATAINSERTField extends AppCompatActivity {
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(healthTipsModel);
 
                     Toast.makeText(NeededHealthTipsDATAINSERTField.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    healthTipsValueInsert.setText("");
                 }
 
 

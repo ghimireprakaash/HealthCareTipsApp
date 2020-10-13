@@ -80,6 +80,7 @@ public class NutritionTipsForSkin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForHealthySkinNutritionTips.class));
+                finish();
             }
         });
     }

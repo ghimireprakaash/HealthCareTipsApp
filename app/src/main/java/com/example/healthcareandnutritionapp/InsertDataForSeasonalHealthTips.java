@@ -93,6 +93,8 @@ public class InsertDataForSeasonalHealthTips extends AppCompatActivity {
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(seasonalHealthTipsModel);
 
                     Toast.makeText(InsertDataForSeasonalHealthTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    seasonalTipsValue.setText("");
                 }
             }
         });

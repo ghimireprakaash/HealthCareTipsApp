@@ -92,6 +92,8 @@ public class InsertDataForHealthySkinNutritionTips extends AppCompatActivity {
                     healthySkinNutritionTipsModel.setNutritionTipsForHealthySkinValue(skinTipsValue);
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(healthySkinNutritionTipsModel);
                     Toast.makeText(InsertDataForHealthySkinNutritionTips.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    healthySkinTips.setText("");
                 }
             }
         });

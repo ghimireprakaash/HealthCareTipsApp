@@ -81,6 +81,7 @@ public class SeasonalTips extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), InsertDataForSeasonalHealthTips.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

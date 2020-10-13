@@ -80,6 +80,7 @@ public class RelieveStressTips extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), InsertDataForRelievingStress.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

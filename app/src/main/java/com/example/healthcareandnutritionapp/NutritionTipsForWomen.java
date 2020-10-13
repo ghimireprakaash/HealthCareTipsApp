@@ -80,6 +80,7 @@ public class NutritionTipsForWomen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForWomenNutritionTips.class));
+                finish();
             }
         });
     }

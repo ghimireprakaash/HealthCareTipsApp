@@ -94,6 +94,8 @@ public class InsertDataForRelievingStress extends AppCompatActivity {
                     databaseReference.child(String.valueOf(maxId + 1)).setValue(relieveStressHealthTipsModel);
 
                     Toast.makeText(InsertDataForRelievingStress.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                    stressRelieveValue.setText("");
                 }
             }
         });

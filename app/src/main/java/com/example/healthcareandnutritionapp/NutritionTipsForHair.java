@@ -80,6 +80,7 @@ public class NutritionTipsForHair extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForHealthyHairNutritionTips.class));
+                finish();
             }
         });
     }
