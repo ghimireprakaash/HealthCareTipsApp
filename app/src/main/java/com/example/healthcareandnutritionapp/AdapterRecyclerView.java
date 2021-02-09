@@ -10,9 +10,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterRecyclerView.RecyclerViewHolder> {
+    private final RecyclerViewHolder.OnItemLongClickListener onItemLongClickListener;
 
-    public AdapterRecyclerView(@NonNull FirebaseRecyclerOptions<Model> options) {
+    public AdapterRecyclerView(@NonNull FirebaseRecyclerOptions<Model> options, RecyclerViewHolder.OnItemLongClickListener onItemLongClickListener) {
         super(options);
+        this.onItemLongClickListener = onItemLongClickListener;
     }
 
     @Override
@@ -43,10 +45,10 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardview, parent, false);
 
-        return new RecyclerViewHolder(view);
+        return new RecyclerViewHolder(view, onItemLongClickListener);
     }
 
-    class RecyclerViewHolder extends RecyclerView.ViewHolder{
+    public static class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
         /*
         The below text view in java code defines the references of its respective TextView of Health Tips in card view
          */
@@ -73,8 +75,13 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
         TextView healthySkinNutritionTipsValue;
         TextView weightGainNutritionTipsValue;
 
-        RecyclerViewHolder(@NonNull View itemView) {
+        OnItemLongClickListener onItemLongClickListener;
+
+
+
+        public RecyclerViewHolder(@NonNull View itemView, OnItemLongClickListener onItemLongClickListener) {
             super(itemView);
+            this.onItemLongClickListener = onItemLongClickListener;
 
             /*
                 itemView from the super method is used to link the card view text view in java code through its
@@ -114,6 +121,19 @@ public class AdapterRecyclerView extends FirebaseRecyclerAdapter<Model, AdapterR
             /*
             End of the Heart Tips
              */
+
+            itemView.setOnLongClickListener(this);
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            onItemLongClickListener.onItemLongClick(getAdapterPosition());
+            return true;
+        }
+
+
+        public interface OnItemLongClickListener{
+            void onItemLongClick(int position);
         }
     }
 }

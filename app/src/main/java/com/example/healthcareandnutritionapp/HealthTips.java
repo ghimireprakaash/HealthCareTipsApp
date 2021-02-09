@@ -5,8 +5,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import java.util.Objects;
 
 public class HealthTips extends AppCompatActivity {
     private Toolbar toolbar;
@@ -25,7 +25,7 @@ public class HealthTips extends AppCompatActivity {
         toolbar = findViewById(R.id.healthTips_toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

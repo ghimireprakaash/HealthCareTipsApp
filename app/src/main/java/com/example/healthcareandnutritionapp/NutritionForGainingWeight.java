@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,8 +14,9 @@ import android.widget.ProgressBar;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
+import java.util.Objects;
 
-public class NutritionForGainingWeight extends AppCompatActivity {
+public class NutritionForGainingWeight extends AppCompatActivity implements AdapterRecyclerView.RecyclerViewHolder.OnItemLongClickListener {
     private Toolbar toolbar;
 
     RecyclerView weightGainNutritionRecyclerView;
@@ -32,7 +35,7 @@ public class NutritionForGainingWeight extends AppCompatActivity {
         toolbar = findViewById(R.id.weightGainNutrition_toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -54,7 +57,7 @@ public class NutritionForGainingWeight extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Nutrition Tips").child("Tips for Gaining Weight"), Model.class)
                         .build();
 
-        adapterRecyclerView = new AdapterRecyclerView(options);
+        adapterRecyclerView = new AdapterRecyclerView(options, this);
 
 
         progressBar_WeightGainNutritionTips.setVisibility(View.VISIBLE);
@@ -79,7 +82,6 @@ public class NutritionForGainingWeight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), InsertDataForGainingWeight.class));
-                finish();
             }
         });
     }
@@ -89,5 +91,25 @@ public class NutritionForGainingWeight extends AppCompatActivity {
         super.onStart();
 
         adapterRecyclerView.startListening();
+    }
+
+    @Override
+    public void onItemLongClick(final int position) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Remove Item");
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                adapterRecyclerView.getRef(position).removeValue();
+                adapterRecyclerView.notifyItemRemoved(position);
+            }
+        });
+        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dialogBuilder.create().show();
     }
 }

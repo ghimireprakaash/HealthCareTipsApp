@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class InsertDataForMenHealthTips extends AppCompatActivity {
     private Toolbar toolbar;
 
@@ -42,13 +44,12 @@ public class InsertDataForMenHealthTips extends AppCompatActivity {
         toolbar = findViewById(R.id.menHealthTips_dataInsert_toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(InsertDataForMenHealthTips.this, HealthTipsForMen.class));
                 finish();
             }
         });

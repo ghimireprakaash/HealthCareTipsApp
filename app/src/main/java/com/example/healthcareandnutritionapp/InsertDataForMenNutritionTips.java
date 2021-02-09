@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class InsertDataForMenNutritionTips extends AppCompatActivity {
     private Toolbar toolbar;
 
@@ -44,13 +46,12 @@ public class InsertDataForMenNutritionTips extends AppCompatActivity {
         toolbar = findViewById(R.id.menNutrition_dataInsert_toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(InsertDataForMenNutritionTips.this, NutritionTipsForMen.class));
                 finish();
             }
         });

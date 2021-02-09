@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class InsertDataForRelievingStress extends AppCompatActivity {
     private Toolbar toolbar;
 
@@ -44,13 +46,12 @@ public class InsertDataForRelievingStress extends AppCompatActivity {
         toolbar = findViewById(R.id.stressRelieve_dataInsert_toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(InsertDataForRelievingStress.this, RelieveStressTips.class));
                 finish();
             }
         });
