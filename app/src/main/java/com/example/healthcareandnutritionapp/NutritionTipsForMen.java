@@ -56,12 +56,16 @@ public class NutritionTipsForMen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         menNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 menNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 menNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
 

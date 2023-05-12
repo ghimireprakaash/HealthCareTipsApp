@@ -54,12 +54,16 @@ public class NutritionTipsForHealthyHair extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         healthyHairNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 healthyHairNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 hairNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }

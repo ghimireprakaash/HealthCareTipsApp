@@ -54,12 +54,16 @@ public class NutritionTipsForWomen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         womenNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 womenNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 womenNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }

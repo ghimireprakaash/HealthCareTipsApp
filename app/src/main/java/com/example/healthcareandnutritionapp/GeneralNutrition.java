@@ -52,12 +52,16 @@ public class GeneralNutrition extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         generalNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 generalNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 nutritionTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
 

@@ -57,12 +57,13 @@ public class SubClassHealthTips extends AppCompatActivity {
 
         healthTips_ProgressBar.setVisibility(View.VISIBLE);
 
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 healthTips_ProgressBar.setVisibility(View.GONE);
+
                 healthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
 

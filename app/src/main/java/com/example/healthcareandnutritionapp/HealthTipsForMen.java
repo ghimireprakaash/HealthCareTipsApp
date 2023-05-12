@@ -53,8 +53,6 @@ public class HealthTipsForMen extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
-        menHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
-
 
         progressBar_menHealthTips.setVisibility(View.VISIBLE);
 
@@ -63,9 +61,11 @@ public class HealthTipsForMen extends AppCompatActivity {
             @Override
             public void run() {
                 progressBar_menHealthTips.setVisibility(View.GONE);
-                onStart();
+
+                menHealthTipsRecyclerView.setAdapter(adapterRecyclerView);
+
             }
-        }, 2000);
+        }, 1000);
     }
 
 

@@ -54,12 +54,16 @@ public class NutritionTipsForGainingWeight extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(options);
 
+
         weightGainNutritionTips_ProgressBar.setVisibility(View.VISIBLE);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 weightGainNutritionTips_ProgressBar.setVisibility(View.GONE);
+
                 weightGainNutritionRecyclerView.setAdapter(adapterRecyclerView);
+
             }
         },1000);
     }
